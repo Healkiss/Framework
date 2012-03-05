@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <setting id="basePath">C:\wamp\www\mvc1/</setting>
+  <setting id="libsPath">C:\wamp\www\mvc1/libs/</setting>
+  <setting id="themesPath">C:\wamp\www\mvc1/themes/</setting>
+  <setting id="imagesPath">C:\wamp\www\mvc1/images/</setting>
+  <setting id="modulesPath">C:\wamp\www\mvc1/modules/</setting>
+  <setting id="scriptsPath">C:\wamp\www\mvc1/scripts/</setting>
+  <setting id="baseURL">/mvc1/</setting>
+  <setting id="libsURL">/mvc1/libs/</setting>
+  <setting id="themesURL">/mvc1/themes/</setting>
+  <setting id="imagesURL">/mvc1/images/</setting>
+  <setting id="modulesURL">/mvc1/modules/</setting>
+  <setting id="scriptsURL">/mvc1/scripts/</setting>
+  <setting id="urlDataSeparator">-</setting>
+  <setting id="urlParameterName">data</setting>
+  <setting id="urlParameterSeparator">/</setting>
+  <setting id="databaseDriver">mysql</setting>
+  <setting id="databaseHost"></setting>
+  <setting id="databaseBase">exempletest</setting>
+  <setting id="databaseUsername">root</setting>
+  <setting id="databasePassword"></setting>
+  <setting id="adminUsername">administrateur</setting>
+  <setting id="adminPassword">administrateur</setting>
+  <setting id="pageTitle">MVC1</setting>
+  <setting id="pageDescription">test mvc</setting>
+  <setting id="pageKeywords">test, mvc</setting>
+  <setting id="pageLanguage">fr</setting>
+  <setting id="pageCanonicalLink">/mvc1/</setting>
+  <setting id="pageReadingDir">ltr</setting>
+  <setting id="pageEncoding">utf-8</setting>
+  <setting id="defaultModule">blog</setting>
+</settings>
