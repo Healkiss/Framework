@@ -10,7 +10,7 @@
 		}
 		
 		public function loadBDD(){
-			/*try{
+			try{
 				error_reporting(E_ALL ^ E_WARNING); // Don't show php errors concerning DB Connection
 		    	$this->database = new PDO($this->databaseDriver.':host='.$this->databaseHost.';dbname='.$this->databaseBase, $this->databaseUsername, $this->databasePassword, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
 				echo "bdd ok <br/>";
@@ -19,7 +19,7 @@
 				echo 'La base de donn&eacute; n est pas disponible<br>';
 				echo 'Erreur:'.$e.getMessage().'<br>';
 				echo 'Numero:'.$e.getCode();
-			}*/
+			}
 		}
 		
 		public function readSettings($configurationFileName)
