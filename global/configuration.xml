@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
-  <setting id="basePath">C:\wamp\www\mvc1/</setting>
-  <setting id="libsPath">C:\wamp\www\mvc1/libs/</setting>
-  <setting id="themesPath">C:\wamp\www\mvc1/themes/</setting>
-  <setting id="imagesPath">C:\wamp\www\mvc1/images/</setting>
-  <setting id="modulesPath">C:\wamp\www\mvc1/modules/</setting>
-  <setting id="scriptsPath">C:\wamp\www\mvc1/scripts/</setting>
-  <setting id="baseURL">/mvc1/</setting>
-  <setting id="libsURL">/mvc1/libs/</setting>
-  <setting id="themesURL">/mvc1/themes/</setting>
-  <setting id="imagesURL">/mvc1/images/</setting>
-  <setting id="modulesURL">/mvc1/modules/</setting>
-  <setting id="scriptsURL">/mvc1/scripts/</setting>
+  <setting id="basePath">/autofs/netapp/www/fschneid/Framework/</setting>
+  <setting id="libsPath">/autofs/netapp/www/fschneid/Framework/libs/</setting>
+  <setting id="themesPath"> /autofs/netapp/www/fschneid/Framework/themes/</setting>
+  <setting id="imagesPath"> /autofs/netapp/www/fschneid/Framework/images/</setting>
+  <setting id="modulesPath"> /autofs/netapp/www/fschneid/Framework/modules/</setting>
+  <setting id="scriptsPath"> /autofs/netapp/www/fschneid/Framework/scripts/</setting>
+  <setting id="baseURL">/Framework/</setting>
+  <setting id="libsURL">/mvcFramework/libs/</setting>
+  <setting id="themesURL">/Framework/themes/</setting>
+  <setting id="imagesURL">/Framework/images/</setting>
+  <setting id="modulesURL">/Framework/modules/</setting>
+  <setting id="scriptsURL">/Framework/scripts/</setting>
   <setting id="urlDataSeparator">-</setting>
   <setting id="urlParameterName">data</setting>
   <setting id="urlParameterSeparator">/</setting>
@@ -22,7 +22,7 @@
   <setting id="databasePassword"></setting>
   <setting id="adminUsername">administrateur</setting>
   <setting id="adminPassword">administrateur</setting>
-  <setting id="pageTitle">MVC1</setting>
+  <setting id="pageTitle">Framework</setting>
   <setting id="pageDescription">test mvc</setting>
   <setting id="pageKeywords">test, mvc</setting>
   <setting id="pageLanguage">fr</setting>
