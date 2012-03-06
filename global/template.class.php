@@ -46,12 +46,12 @@ function __construct($module) {
  
 function show($view,$name,$data) {
 	$moduleName = $name;
-	$path = 'show : ' .$this->module->getCore()->getModulesPath();
+	$path = 'show view : ' .$this->module->getCore()->getModulesPath();
 	$path .= $moduleName;
 	$path .= '/ressources/';
-	$path .= $moduleName;
+	$path .= $view;
 	$path .= 'View.php';
-	echo 'view : ' . $path ."<br/>";
+	echo $path ."<br/>";
 	if(file_exists($this->module->getCore()->getModulesPath().$moduleName.'/ressources/'.$view.'View.php'))
 		require_once($this->module->getCore()->getModulesPath().$moduleName.'/ressources/'.$view.'View.php');
 }

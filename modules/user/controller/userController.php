@@ -11,7 +11,14 @@ class UserController extends baseController
     		$connected = false;
     	}
 		$this->module->addModuleData('connected',$connected);
+		$this->module->addModuleData('namePlayer',"Healkiss");
     }
+	
+	public function display($view)
+	{
+		$this->template->show($view,$this->getModuleName(),$this->getmoduleData());
+	}
+	
 	public function askLogin($connected){
 		$this->module->getTemplate()->show('user',$connected);
 	}

@@ -11,6 +11,7 @@ class Module {
 	
 	public function __construct($core, $moduleName, $moduleData) 
 	{
+		$moduleName = ucfirst($moduleName);
 		$this->core = $core;
 		$this->moduleController = $moduleName . 'Controller';
 		$this->setModuleData($moduleData);

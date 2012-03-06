@@ -3,15 +3,16 @@
 ?>
 	<div id=menu>
 		<div class=sub_menu>
-			<a href='<?php echo $this->baseURL?>/Royaume'>Royaume</a>
+			<?php echo "<a href='".$this->baseURL."/Royaume'>Royaume</a>";?>
 		</div>
 		<div class=sub_menu>
-		
-			<?php if($connected){
-				echo "<a href='".$this->baseURL."/Login'>Login</a>";
-			}else{
-				echo "<a href='".$this->baseURL."/Login'>Login</a>";
-			}
+			<?php
+			    if($data['user']['connected']){
+					echo 'Bienvenue'.$data['user']['namePlayer'].'<br/>';
+				}else{
+					echo 'Veuillez vous identifier :<br/>';
+					echo $this->module->getTemplate()->show('login','user',$data);
+				}
 			?>
 		</div>
 	</div>

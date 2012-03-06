@@ -151,6 +151,12 @@
 			$this->module->start();
 			
 		}
+		
+		public function displayModule()
+		{
+			echo 'display module : ' .  $this->getModuleName() ."<br/>";
+			$this->getModule()->display($this->getModuleName());
+		}
 		public function getDatabase()
 		{
 			return $this->database;

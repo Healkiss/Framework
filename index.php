@@ -6,8 +6,8 @@
 	$core = new Core();
 	$core->loadBDD();
 	$core->parseURL();
-	
+	$core->startModule();
 	ob_start();
-		$core->startModule();
+		$core->displayModule();
 	ob_end_flush();
 ?>

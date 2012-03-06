@@ -12,5 +12,3 @@
 		<?php echo $this->module->getCore()->getPageDescription() != '' || true ? '<meta name="description" content="'.$this->module->getCore()->getPageDescription().'" />' : '' ; ?>
 	</head>
 	<body>
-		<?php echo $this->module->getCore()->getPageTitle().'<br/>';?>
-	</body>

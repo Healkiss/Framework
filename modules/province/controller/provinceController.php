@@ -16,11 +16,6 @@ class ProvinceController extends baseController
 		$moduleUser = $childs['User'];
     	$moduleUser ->start();
 		$data['User'] = $moduleUser->getModuleData();
-		
-		$this->module->getTemplate()->show('header','header',$data);
-		$moduleUser ->display('Login');
-	    $this->module->display('province');
-		$this->module->getTemplate()->show('footer','footer',$data);
     }
 	
 }
