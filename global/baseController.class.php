@@ -30,14 +30,7 @@ Abstract Class baseController {
 					
 		return new module($this->core, $name,$data);
 	}
-	public function startChildModule()
-	{
-		$this->childModule->start();
-	}
-	public function displayChildModule()
-	{
-		$this->childModule->getTemplate()->show($this->moduleName,$this->childModule->getCore()->getmoduleData());
-	}
+	public
 	/**
 	 * @all controllers must contain a process method
 	 */
@@ -46,9 +39,9 @@ Abstract Class baseController {
 	public function getCore()
 	{
 		return $this->core;
-	}
-	public function display($moduleName,$data){
-		$this->module->getTemplate()->show($moduleName,$data);
-	}
+	}/*
+	public function display($view){
+		$this->module->getTemplate()->show($view,$this->module->getModuleName(),$this->module->getModuleData());
+	}*/
 }
 ?>

@@ -1,10 +1,10 @@
 <?php
 
-class ProvinceController extends baseController
+class MenuController extends baseController
 {
     public function process()
     {		
-	    $this->display('menu',$data);
+	    $this->module->display('menu','menu',$data);
     }
 	
 }

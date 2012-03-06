@@ -24,9 +24,9 @@ class Module {
 		$this->controller->process($this->moduleData);
 	}
 	
-	public function display()
+	public function display($view)
 	{
-		$this->template->show($this->getModuleName(),$this->getmoduleData());
+		$this->template->show($view,$this->getModuleName(),$this->getmoduleData());
 	}
 	//GETTERS
 	public function getModuleName() {
@@ -104,7 +104,7 @@ class Module {
 	}
 	public function setController($name) {
 		// Include controller
-		echo 'chargement controller : ' . $this->core->getModulesPath().$name.'/controller/'.$name.'Controller.php';
+		echo 'chargement controller : ' . $this->core->getModulesPath().$name.'/controller/'.$name.'Controller.php <br/>';
 		// Include controller
 		$moduleName = $name.'Controller';
 		

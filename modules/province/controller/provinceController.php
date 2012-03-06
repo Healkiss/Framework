@@ -12,15 +12,15 @@ class ProvinceController extends baseController
 		$province = new province($this->core,$idProvince);
 		
 		//start and execute user module
-		$childs['user'] = $this->newChildModule('user','');
-		$moduleUser = $childs['user'];
+		$childs['User'] = $this->newChildModule('User','');
+		$moduleUser = $childs['User'];
     	$moduleUser ->start();
-		$data['user'] = $moduleUser->getModuleData();
+		$data['User'] = $moduleUser->getModuleData();
 		
-		$this->module->getTemplate()->show('header',$data);
-		$moduleUser ->display();
-	    $this->display('province',$data);
-		$this->module->getTemplate()->show('footer',$data);
+		$this->module->getTemplate()->show('header','header',$data);
+		$moduleUser ->display('Login');
+	    $this->module->display('province');
+		$this->module->getTemplate()->show('footer','footer',$data);
     }
 	
 }
