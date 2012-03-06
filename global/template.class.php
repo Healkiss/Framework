@@ -45,15 +45,15 @@ function __construct($module) {
  }
  
 function show($name,$data) {
-	$moduleName = ucfirst($name);
+	$moduleName = $name;
 	$path = 'show : ' .$this->module->getCore()->getModulesPath();
 	$path .= $moduleName;
-	$path .= '/Ressources/';
+	$path .= '/ressources/';
 	$path .= $moduleName;
 	$path .= 'View.php';
 	echo 'view : ' . $path ."<br/>";
-	if(file_exists($this->module->getCore()->getModulesPath().$moduleName.'/Ressources/'.$moduleName.'View.php'))
-		require_once($this->module->getCore()->getModulesPath().$moduleName.'/Ressources/'.$moduleName.'View.php');
+	if(file_exists($this->module->getCore()->getModulesPath().$moduleName.'/ressources/'.$moduleName.'View.php'))
+		require_once($this->module->getCore()->getModulesPath().$moduleName.'/ressources/'.$moduleName.'View.php');
 
 }
 

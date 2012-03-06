@@ -12,11 +12,6 @@ class Module {
 	public function __construct($core, $moduleName, $moduleData) 
 	{
 		$this->core = $core;
-		if (file_exists($this -> core -> getModulesPath() . $moduleName . '/Controller/' . $moduleName . 'Controller.php'))
-			require_once ($this -> core -> getModulesPath() . $moduleName . '/Controller/' . $moduleName . 'Controller.php');
-		$path = $this -> core -> getModulesPath();
-		$path .= $moduleName;
-		echo 'construction module : ' . $path . "<br/>";
 		$this->moduleController = $moduleName . 'Controller';
 		$this->setModuleData($moduleData);
 		$this->setModuleSettings($path);
@@ -108,6 +103,8 @@ class Module {
 		}
 	}
 	public function setController($name) {
+		// Include controller
+		echo 'chargement controller : ' . $this->core->getModulesPath().$name.'/controller/'.$name.'Controller.php';
 		// Include controller
 		$moduleName = $name.'Controller';
 		

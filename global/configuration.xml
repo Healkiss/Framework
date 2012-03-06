@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
-  <setting id="basePath">/autofs/netapp/www/fschneid/Framework/</setting>
-  <setting id="libsPath">/autofs/netapp/www/fschneid/Framework/libs/</setting>
-  <setting id="themesPath"> /autofs/netapp/www/fschneid/Framework/themes/</setting>
-  <setting id="imagesPath"> /autofs/netapp/www/fschneid/Framework/images/</setting>
-  <setting id="modulesPath"> /autofs/netapp/www/fschneid/Framework/modules/</setting>
-  <setting id="scriptsPath"> /autofs/netapp/www/fschneid/Framework/scripts/</setting>
+  <setting id="basePath">C:\wamp\www\Framework/</setting>
+  <setting id="libsPath">C:\wamp\www\Framework/</setting>
+  <setting id="themesPath">C:\wamp\www\Framework/themes/</setting>
+  <setting id="imagesPath">C:\wamp\www\Framework/images/</setting>
+  <setting id="modulesPath">C:\wamp\www\Framework/modules/</setting>
+  <setting id="scriptsPath">C:\wamp\www\Framework/scripts/</setting>
   <setting id="baseURL">/Framework/</setting>
-  <setting id="libsURL">/mvcFramework/libs/</setting>
+  <setting id="libsURL">/Framework/libs/</setting>
   <setting id="themesURL">/Framework/themes/</setting>
   <setting id="imagesURL">/Framework/images/</setting>
   <setting id="modulesURL">/Framework/modules/</setting>
@@ -23,10 +23,10 @@
   <setting id="adminUsername">administrateur</setting>
   <setting id="adminPassword">administrateur</setting>
   <setting id="pageTitle">Framework</setting>
-  <setting id="pageDescription">test mvc</setting>
-  <setting id="pageKeywords">test, mvc</setting>
+  <setting id="pageDescription">test framework mvc</setting>
+  <setting id="pageKeywords">test, mvc, framework</setting>
   <setting id="pageLanguage">fr</setting>
-  <setting id="pageCanonicalLink">/mvc1/</setting>
+  <setting id="pageCanonicalLink">/Framework/</setting>
   <setting id="pageReadingDir">ltr</setting>
   <setting id="pageEncoding">utf-8</setting>
   <setting id="defaultModule">blog</setting>

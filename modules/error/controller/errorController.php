@@ -2,8 +2,9 @@
 
 class ErrorController extends baseController
 {
-    public function process($data)
+    public function process()
     {		
-	    $this->core->template->show('erreur',$data);
+	    $this->display('erreur','');
     }
 }
+?>

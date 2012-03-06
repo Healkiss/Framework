@@ -134,7 +134,7 @@
 				{
 					$path = $this->modulePath;
 					$path .= $this->moduleName;
-					echo 'module demand&eacute; : ' .  $path ."<br/>";
+					echo 'module : ' .  $path ." non trouv&eacute, redirection vers erreur <br/>";
 					// If module doesn't exist, redirect to the 404 error module
 					$this->moduleName = 'Error';
 					$this->moduleData = array(0=>'404');
@@ -144,12 +144,7 @@
 
 		public function startModule()
 		{
-			$path = $this->getModulesPath();
-			$path .= $this->getModuleName();
-			$path .= '/Controller/';
-			$path .= $this->getModuleName();
-			$path .= 'Controller.php';
-			echo 'controller : ' .  $path ."<br/>";
+			echo 'start module : ' .  $this->getModuleName() ."<br/>";
 			$module = $this->getModuleName().'Controller';
 			
 			$this->module = new module($this, $this->getModuleName(),$this->getModuleData());
