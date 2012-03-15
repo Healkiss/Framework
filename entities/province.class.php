@@ -13,7 +13,7 @@ class province {
 	private $core;
 	private $batimentProvince;
 	private $idJoueur;
-	private $niveauProvince;
+	private $niveauBatimentProvince;
 	private $underConstruction;
 
 	function __construct($core,$idProvince) {

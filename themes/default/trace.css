@@ -1,0 +1,36 @@
+#resizeDiv
+{
+	position : relative;
+	width:auto;
+	height: auto;
+	padding: 5px;
+	/*background-color : black;*/
+	border: 4px solid black;
+	border-radius: 8px;
+	margin-bottom: 50px;
+}
+#resizeDiv h3 
+{ 
+	text-align: center;
+	margin: 0;
+}
+#date
+{
+	position : absolute;
+	bottom :50px;
+	left :0;
+	width: 80%;
+	height: 40px;
+	padding: 5px;
+	/*background-color : black;*/
+	border: 4px solid black;
+	border-radius: 8px;
+}
+/* Component containers
+----------------------------------*/
+#widget-docs .ui-widget { font-family: Trebuchet MS,Verdana,Arial,sans-serif; font-size: 1em; }
+#widget-docs .ui-widget input, #widget-docs .ui-widget select, #widget-docs .ui-widget textarea, #widget-docs .ui-widget button { font-family: Trebuchet MS,Verdana,Arial,sans-serif; font-size: 1em; }
+#widget-docs .ui-widget-header { border: 1px solid #ffffff; background: #464646 url(images/464646_40x100_textures_01_flat_100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+#widget-docs .ui-widget-header a { color: #ffffff; }
+#widget-docs .ui-widget-content { border: 1px solid #ffffff; background: #ffffff url(images/ffffff_40x100_textures_01_flat_75.png) 50% 50% repeat-x; color: #222222; }
+#widget-docs .ui-widget-content a { color: #222222; }

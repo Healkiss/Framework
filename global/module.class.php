@@ -14,20 +14,29 @@ class Module {
 		$moduleName = ucfirst($moduleName);
 		$this->core = $core;
 		$this->moduleController = $moduleName . 'Controller';
-		$this->setModuleData($moduleData);
 		$this->setModuleSettings($path);
 		$this->setModuleName($moduleName);
 		$this->setController($moduleName);
-		$this->template = new template($this);
+        $this->template = new template($this);
 	}
 	
 	public function start(){
-		$this->controller->process($this->moduleData);
+		$this->controller->process();
 	}
 	
-	public function display($view)
+	public function display()
 	{
-		$this->template->show($view,$this->getModuleName(),$this->getmoduleData());
+		extract($this->core->getDatas());
+        ob_start();
+		$this->template->showModule($this->getModuleName(),$this->getmoduleData());
+        $this->controller->setContent(ob_get_clean());
+        $layout = $this->controller->getLayout();
+        if ($layout){
+            $this->template->showLayout($layout);
+        }else{
+            $this->template->showModule($this->getModuleName(),$this->getmoduleData());
+        }
+        
 	}
 	//GETTERS
 	public function getModuleName() {
@@ -49,10 +58,14 @@ class Module {
 	public function getModuleSettings() {
 		return $this -> moduleSettings;
 	}
-	
-	public function getTemplate() {
-		return $this -> template;
-	}
+    
+    public function getTemplate(){
+        return $this->template;
+    }
+    
+    public function setTemplate($template){
+        $this->template = $template;
+    }
 	
 	public function getCore() {
 		return $this -> core;
@@ -104,8 +117,6 @@ class Module {
 		}
 	}
 	public function setController($name) {
-		// Include controller
-		echo 'chargement controller : ' . $this->core->getModulesPath().$name.'/controller/'.$name.'Controller.php <br/>';
 		// Include controller
 		$moduleName = $name.'Controller';
 		

@@ -1,0 +1,151 @@
+/*/////////////////////////////////
+ ///////MENU/////////////////////
+ //////////////////////////////*/
+#fakeClass{
+	display : none;
+}
+
+#menu {
+	display : inline-block;
+	vertical-align:top;
+	text-align: center;
+	width: 175px
+}
+
+.sub_menu {
+	position: relative;
+	padding-left: 25px;
+	background-color: #0064CD;
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear,left,right,from(#049cdb),to(#0064cd));
+	background-image: -moz-linear-gradient(left,#049cdb,#0064cd);
+	background-image: -ms-linear-gradient(left,#049cdb,#0064cd);
+	background-image: -webkit-gradient(linear,left,left, right,color-stop(0%,#049cdb),color-stop(100%,#0064cd));
+	background-image: -webkit-linear-gradient(left,#049cdb,#0064cd);
+	background-image: -o-linear-gradient(left,#049cdb,#0064cd);
+	background-image: linear-gradient(left,#049cdb,#0064cd);
+
+	border: 2px solid black;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+.menu_title {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width : 25px;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	color: white;
+	font: bold 16px /20px arial;
+	text-shadow: 2px 2px 2px #8e0425;
+	z-index: 100;
+}
+
+.lienMenu {
+	display: block;
+	width: auto;
+	height: 20px;
+}
+.lienMenu:hover {
+	background-color: #0064CD;
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear,left,right,from(#049cdb),to(#1186ff));
+	background-image: -moz-linear-gradient(left,#049cdb,#1186ff);
+	background-image: -ms-linear-gradient(left,#049cdb,#1186ff);
+	background-image: -webkit-gradient(linear,left,left, right,color-stop(0%,#049cdb),color-stop(100%,#1186ff));
+	background-image: -webkit-linear-gradient(left,#049cdb,#1186ff);
+	background-image: -o-linear-gradient(left,#049cdb,#1186ff);
+	background-image: linear-gradient(left,#049cdb,#1186ff);
+}
+.lienMenu:link {
+	color: black;
+	text-decoration: none;
+}
+.lienMenu:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.menu_footer{
+	position:relative;
+	width : 5px;
+	height: 5px;
+	bottom : 0px;
+	right: 0px;
+	background-color: red;
+	z-index: 100;
+}
+
+.button_deconnexion {
+	color: red;
+}
+.menu_left {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 125px;
+	background-color: #5470fe;
+	z-index: 80;
+	text-align: center;
+	/* Anciens navigateurs */
+	background: #031325 url("gradient-bg.png") repeat-x top;
+	-o-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	/* Navigateurs r�cents */
+	background: -moz-linear-gradient(
+	right,
+	#053e78,
+	#031325
+	);
+	background: -webkit-gradient(
+	linear,
+	right top, left top,
+	from(#053e78),
+	to(#031325)
+	);
+	-moz-box-shadow: 5px 0px 5px #888;
+	-webkit-box-shadow: 5px 0px 5px #888;
+	box-shadow: 5px 0px 5px #888;
+}
+.indices {
+	margin: auto;
+	padding-top: 50%;
+	color: white;
+}
+.icone_menu {
+	float: left;
+	width: 75px;
+	height: 50px;
+}
+#menu_top {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height : 40px;
+	background-color :yellow;
+	background-repeat: repeat-x;
+	background-image: url('./images/bandeau.png');
+	background-position:bottom;
+	z-index: 81;
+	text-align: center;
+}
+
+#menu_top a{
+	color : black;
+}
+.under_construction_image {
+	width : 50px;
+	height : 40px;
+	background-image: url('./images/little_under_construction.gif');
+}

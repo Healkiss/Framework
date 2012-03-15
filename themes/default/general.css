@@ -1,0 +1,107 @@
+#fake{
+	position : absolute;
+}
+body{
+	/* Anciens navigateurs */
+	background: #712005 url("gradient-bg.png") repeat-x top;
+	-o-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	/* Navigateurs r�cents */
+	background: -moz-linear-gradient(
+		left top,
+		#230f0e,
+		#712005
+	);
+	background: -webkit-gradient(
+		linear,
+		left top, right bottom,
+		from(#230f0e),
+		to(#712005)
+	);
+	background-attachment:fixed;
+	background-repeat : no-repeat;
+	background-color: #4C89D9;
+	font-size: 11px;
+	font-family: Verdana, Geneva, Arial, sans-serif;
+	line-height: 14px;
+	text-align: left;
+	visibility: visible;
+	position: relative;
+	min-height: 900px;
+	height: 900px;
+	width: 1200px;
+	margin-left:auto;
+	margin-right:auto;
+	/*padding-left : 155px;*/
+}
+
+#banniere{
+	background-image:url(./images/bellone.png);
+	border: 4px solid black;
+	-moz-border-radius:8px;
+	-webkit-border-radius: 8 px;
+	border-radius: 8px;
+	color: white;
+	width: 1200px;
+	height: 150px;
+	margin-left : auto;
+	margin-right : auto;
+	margin-bottom : 10px;
+}
+
+/*Permet au footer d'etre sous le contenu qui est en taille autmatique*/
+#contenuEtFooter{
+	display : inline-block;
+	width: 75%;
+	min-height: 100%;
+	height: 100%;
+}
+
+#contenu{
+	border: 4px solid black;
+	-moz-border-radius:8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	color: white;
+	/* Anciens navigateurs */
+	background: #031325 url("gradient-bg.png") repeat-x top;
+	-o-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	/* Navigateurs r�cents */
+	background: -moz-linear-gradient(
+		top,
+		#053e78,
+		#031325
+	);
+	background: -webkit-gradient(
+		linear,
+		left top, left bottom,
+		from(#053e78),
+		to(#031325)
+	);
+	min-width: 1000px;
+	width: 75%;
+	min-height: 900px;
+	height: auto;
+}
+
+#footer{
+	margin-top: 10px;
+	border: 4px solid black;
+	-moz-border-radius:8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	background: #1E5799; /* old browsers */
+	background: -moz-linear-gradient(top, #1E5799 0%, #2989D8 100%, #207cca 100%, #7db9e8 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1E5799), color-stop(100%,#2989D8), color-stop(100%,#207cca), color-stop(100%,#7db9e8)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1E5799', endColorstr='#7db9e8',GradientType=0 ); /* ie */
+	background: -o-linear-gradient(top, #1E5799 0%,#2989D8 100%,#207cca 100%,#7db9e8 100%);
+	color: white;
+	width: 1000px;
+	height: 20px;
+	text-align: center;
+}

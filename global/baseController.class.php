@@ -1,5 +1,4 @@
 <?php
-
 Abstract Class baseController {
 	/*
 	 * @core object
@@ -10,38 +9,58 @@ Abstract Class baseController {
 	protected $module;
 	protected $moduleName;
 	protected $moduleData;
-	protected $template;
-	
+	protected $content;
+    protected $layout = "default";
+        
 	function __construct($core,$module) {
 	        $this->core = $core;
 			$this->module = $module;
 	}
-	function newChildModule($name,$data){
-		$path = $this->core->getModulesPath();
-		$path .= $name;
-		$path .= '/Controller/';
-		$path .= $name;
-		$path .= 'Controller.php';
-		echo 'controller : ' .  $path ."<br/>";
-		
-		$childModule = $name.'Controller';
+	function newChildModule($name){		
 		$this->moduleName = $name;
-		$this->moduleData = $data;
 					
-		return new module($this->core, $name,$data);
+		return new module($this->core, $name,$this->core->getDatas());
 	}
-	public
-	/**
-	 * @all controllers must contain a process method
-	 */
-	abstract function process();
+	public abstract function process();
 	
 	public function getCore()
 	{
 		return $this->core;
-	}/*
-	public function display($view){
-		$this->module->getTemplate()->show($view,$this->module->getModuleName(),$this->module->getModuleData());
-	}*/
+	}
+	public function getDatasModule($nameModule){
+		$datas = $this->core->getDatas();
+		foreach($datas as $name => $content){
+			if(strcmp($name,$nameModule)){
+				return $content;
+			}
+		}
+		return false;
+	}
+    
+    public function getLayout(){
+        return $this->layout;
+    }
+    
+    public function setLayout($layout){
+        $this->layout = $layout;
+    }
+        
+	public function getContent(){
+        return $this->content;
+    }
+    public function setContent($content){
+        $this->content = $content;
+    }   
+    public function getModule(){
+        return $this->module;
+    }
+	public function addDatasModule($nameData,$data){
+		$this->core->addData($this->module->getModuleName(),$nameData,$data);
+	}
+	
+	public function addTrace($nameTrace,$trace){
+		$this->core->addData('Trace',$nameTrace,$trace);
+	}
+
 }
 ?>

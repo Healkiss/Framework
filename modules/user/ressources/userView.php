@@ -1,5 +1,5 @@
 <?php
-$connected = $data['connected'];
+$connected = $datas['User']['connected'];
 if($connected){
 	echo 'Bienvenue<br/>';
 }else{

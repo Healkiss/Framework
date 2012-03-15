@@ -7,13 +7,21 @@
 			
 		    header('Content-type:text/html; charset='.$this->pageEncoding);
 		    setlocale(LC_ALL, $this->pageLanguage);
+			require_once($this->getBasePath().'global/functions/fonctionsAffichage.php');
+			require_once($this->getBasePath().'global/functions/fonctionsAttaques.php');
+			require_once($this->getBasePath().'global/functions/fonctionsCommunes.php');
+			require_once($this->getBasePath().'global/functions/fonctionsDates.php');
+			require_once($this->getBasePath().'global/functions/fonctionsMail.php');
+			require_once($this->getBasePath().'global/functions/fonctionsMessages.php');
+			require_once($this->getBasePath().'global/functions/fonctionsProvince.php');
+			require_once($this->getBasePath().'global/functions/fonctionsRapports.php');
+			require_once($this->getBasePath().'global/form.php');
 		}
 		
 		public function loadBDD(){
 			try{
 				error_reporting(E_ALL ^ E_WARNING); // Don't show php errors concerning DB Connection
 		    	$this->database = new PDO($this->databaseDriver.':host='.$this->databaseHost.';dbname='.$this->databaseBase, $this->databaseUsername, $this->databasePassword, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-				echo "bdd ok <br/>";
 				error_reporting(E_ALL ^ E_NOTICE); // Turn error reporting back to default
 			}catch(PDOexeption $e){
 				echo 'La base de donn&eacute; n est pas disponible<br>';
@@ -52,8 +60,6 @@
 				case 'databaseBase' : $this->databaseBase = $value; break;
 				case 'databaseUsername' : $this->databaseUsername = $value; break;
 				case 'databasePassword' : $this->databasePassword = $value; break;
-				case 'adminUsername' : $this->adminUsername = $value; break;
-				case 'adminPassword' : $this->adminPassword = $value; break;
 				case 'pageTitle' : $this->pageTitle = $value; $this->pageTitleBase = $value; break;
 				case 'pageDescription' : $this->pageDescription = $value; break;
 				case 'pageKeywords' : $this->pageKeywords = explode(', ', $value); break;
@@ -119,7 +125,8 @@
 					// This is the last module, extract module's name and data
 					$moduleAndData = explode($this->urlDataSeparator, $modules[$i]);
 					$this->moduleName = $moduleAndData[0];
-					$this->moduleData = array_slice($moduleAndData, 1);
+					$datas['Parameter'][0] = $moduleAndData[1] ;
+					$this->datas = $datas;
 				}
 				if (is_dir($this->modulePath . $this->moduleName))
 				{
@@ -134,28 +141,26 @@
 				{
 					$path = $this->modulePath;
 					$path .= $this->moduleName;
-					echo 'module : ' .  $path ." non trouv&eacute, redirection vers erreur <br/>";
+					$this->addTrace('core class says','module : ' .  $path ." non trouv&eacute, redirection vers erreur");
 					// If module doesn't exist, redirect to the 404 error module
 					$this->moduleName = 'Error';
-					$this->moduleData = array(0=>'404');
+					$this->datas = array(0=>'404');
 				}
 			}
 		}
 
 		public function startModule()
 		{
-			echo 'start module : ' .  $this->getModuleName() ."<br/>";
 			$module = $this->getModuleName().'Controller';
 			
-			$this->module = new module($this, $this->getModuleName(),$this->getModuleData());
+			$this->module = new module($this, $this->moduleName,$this->datas);
 			$this->module->start();
 			
 		}
-		
+		            
 		public function displayModule()
 		{
-			echo 'display module : ' .  $this->getModuleName() ."<br/>";
-			$this->getModule()->display($this->getModuleName());
+			$this->getModule()->display();
 		}
 		public function getDatabase()
 		{
@@ -265,14 +270,6 @@
 		{
 			return $this->databasePassword;
 		}
-		public function getAdminUsername()
-		{
-			return $this->adminUsername;
-		}
-		public function getAdminPassword()
-		{
-			return $this->adminPassword;
-		}
 		public function getPageTitle()
 		{
 			return $this->pageTitle;
@@ -313,9 +310,9 @@
 		{
 			return $this->defaultModule;
 		}
-		public function isAdmin()
+		public function getDatas()
 		{
-			return $this->isAdmin;
+			return $this->datas;
 		}
 		
 	    public function setPageTitle($pageTitle)
@@ -348,6 +345,23 @@
 		{
 			$this->moduleData = $data;
 		}
+		public function setDatas($data)
+		{
+			$this->datas = $data;
+		}
+		public function addData($nameModule, $nameData, $data){
+			if($this->datas == ''){
+				$this->datas = array($nameData => $data);
+			}else{
+				$datas = $this->datas;
+				$datas[$nameModule][$nameData] = $data ;
+				$this->datas = $datas;
+			}
+		}
+		
+		public function addTrace($nameTrace,$trace){
+			$this->addData('Trace',$nameTrace,$trace);
+		}
 		// Database
 		private $database;
 		
@@ -358,6 +372,9 @@
 		private $modulePath;
 		private $moduleData;
 		private $moduleSettings;
+		
+		//datas
+		private $datas;
 
 		// Settings
 		private $basePath;
@@ -380,8 +397,6 @@
 		private $databaseBase;
 		private $databaseUsername;
 		private $databasePassword;
-		private $adminUsername;
-		private $adminPassword;
 		private $pageTitle;
 		private $pageTitleBase;
 		private $pagePath = array();
@@ -392,6 +407,5 @@
 		private $pageReadingDir;
 		private $pageEncoding;
 		private $defaultModule;
-		private $isAdmin;
 	}
 ?>
